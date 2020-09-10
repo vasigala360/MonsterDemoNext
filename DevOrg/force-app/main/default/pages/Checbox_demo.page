@@ -1,0 +1,64 @@
+<apex:page >
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        var favorite;
+    
+        $(document).ready(function() {
+            $("#valbutton").click(function(){
+                favorite = [];     
+                $("#mylist ul").empty();
+                $.each($("input[type='checkbox']:checked"), function(){            
+                    favorite.push($(this).val());
+                });
+                
+                $.each(favorite, function(index,value) {
+                    $("#mylist ul").append('<li value="'+value+'">'+value+'&nbsp;&nbsp;&nbsp;<a href="#" class="itemDelete">Remove</a>'+'</li>');
+                });
+                $("#myListInText").text(favorite);
+            });
+            
+            $('#mylist ul').on('click', '.itemDelete', function() {
+                var valueRem =  $(this).closest('li').attr('value');
+                $(this).closest('li').remove();
+                favorite.splice(favorite.indexOf(valueRem), 1);
+            	$("#myListInText").text(favorite);
+            });
+            
+            
+        });
+    	
+    	
+    
+    </script>
+    
+    <style>
+    	div #mylist{
+        	height: 200px;
+  			width: 25%;
+  			background-color: lightblue;
+		}
+    
+    </style>
+    
+    <form>
+        <h3>Select your favorite sports:</h3>
+        <label><input type="checkbox" value="football" name="sport"> Football</input></label>
+    	<label><input type="checkbox" value="baseball" name="sport"> Baseball</input></label>
+		<label><input type="checkbox" value="cricket" name="sport"> Cricket</input></label>
+		<label><input type="checkbox" value="boxing" name="sport"> Boxing</input></label>
+		<label><input type="checkbox" value="racing" name="sport"> Racing</input></label>
+		<label><input type="checkbox" value="swimming" name="sport"> Swimming</input></label>
+		<br/>
+		<button type="button" id="valbutton">Get Values</button>
+		<div id="mylist">
+    		<ul>
+        
+    		</ul>
+		</div>
+		<div id="myListInText">
+            
+		</div>
+	</form>
+
+</apex:page>

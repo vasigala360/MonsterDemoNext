@@ -1,0 +1,28 @@
+.THIS p{
+    color : red;
+    font-size : 14px;
+}
+
+p.THIS{
+    color : orange;
+    font-size : 14px;
+}
+
+.THIS #myp{
+    color : maroon;
+    font-size : 14px;
+}
+
+#mypupper.THIS{
+    color : violet;
+    font-size : 26px;
+}
+
+.THIS .paragraph1{
+    color : blue;
+    font-size : 14px;
+}
+.THIS .paragraph2{
+    color : green;
+    font-size : 14px;
+}

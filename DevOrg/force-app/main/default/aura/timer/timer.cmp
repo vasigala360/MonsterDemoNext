@@ -1,0 +1,32 @@
+<aura:component implements="force:appHostable" controller="TimeInputController">
+    <aura:attribute name="wirePrefix" type="string" default=""/>
+    <aura:attribute name="today" type="Date" default=""/>
+    <aura:attribute name="startTime" type="String" default=""/>
+    <aura:attribute name="endTime" type="String" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div class="wireClass">
+        <fieldset class="slds-box slds-theme--default slds-container--small">
+            <div id="newexpenseform" class="slds-text-heading--small 
+                                               slds-p-vertical--medium">
+                Input Wire Timings
+            </div>
+            <form class="slds-form--stacked">
+                <lightning:input type="time" name="input1" label="Start Time" 
+                                 value="{!v.startTime}" min="06:00:00.000Z" max="22:00:00.000Z" 
+                                 />
+                <lightning:input type="time" name="input2" label="End Time" 
+                                 value="{!v.endTime}" min="06:00:00.000Z" max="22:00:00.000Z" 
+                                 />
+            </form>
+            <lightning:button label="Update Timings" 
+                              class="slds-m-top--medium"
+                              variant="brand"
+                              onclick="{!c.saveTime}"/>
+            <lightning:button label="Exit" 
+                              class="slds-m-top--medium"
+                              variant="neutral"
+                              onclick="{!c.exit}"/>
+        </fieldset>
+    </div>    
+    
+</aura:component>

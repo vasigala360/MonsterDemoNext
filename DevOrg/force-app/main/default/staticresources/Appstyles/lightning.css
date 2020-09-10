@@ -1,0 +1,21 @@
+/* Applies to the entire body of the HTML document (except where overridden by more specific
+selectors). */
+body {
+  margin: 50px;
+  background-color: rgb(240,180,180);
+  font-family: arial, sans-serif;
+  font-size: 20px;
+}
+
+/* Applies to all <h1>...</h1> elements. */
+h1 {
+  font-size: 55px;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+/* Applies to all elements with <... class="someclass"> specified. */
+.lightningClass { color: blue; }
+
+/* Applies to the element with <... id="someid"> specified. */
+#lightningid { color: grey; }

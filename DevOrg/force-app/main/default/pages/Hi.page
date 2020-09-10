@@ -1,0 +1,31 @@
+<apex:page standardController="Account" standardStylesheets="false" applyBodyTag="false">
+    <!-- Salesforce Classic "Aloha" theme -->
+    <apex:variable var="uiTheme" value="classic2010Theme" 
+        rendered="{!$User.UIThemeDisplayed == 'Theme3'}">
+        <apex:stylesheet value="{!URLFOR($Resource.AppStyles, 
+                                         'classic.css')}" />
+    </apex:variable>
+    
+    <!-- Lightning Desktop theme -->
+    <apex:variable var="uiTheme" value="lightningDesktop" 
+        rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
+        <apex:stylesheet value="{!URLFOR($Resource.AppStyles, 
+                                         'lightning.css')}" />
+    </apex:variable>
+    
+    <!-- Salesforce mobile theme -->
+    <apex:variable var="uiTheme" value="SalesforceApp" 
+        rendered="{!$User.UIThemeDisplayed == 'Theme4t'}">
+        <apex:stylesheet value="{!URLFOR($Resource.AppStyles, 
+                                         'mobile.css')}" />
+    </apex:variable>
+    <!-- Rest of your page -->
+    
+    <body>
+        
+    <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme3'}">Currently in Classic UI</apex:outputPanel><br/>
+    <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">Currently in Lightning Experience UI</apex:outputPanel>
+    {!$User.UITheme}
+    {!$User.UIThemeDisplayed}
+    </body>
+</apex:page>

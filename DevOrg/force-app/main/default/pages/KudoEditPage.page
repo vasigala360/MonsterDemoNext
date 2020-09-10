@@ -1,0 +1,140 @@
+<apex:page standardController="Kudo__c" extensions="KudoEditController" tabStyle="Kudo__c">
+
+<script src="{!URLFOR($Resource.charCounter)}" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+    $(document).ready(function(){
+                
+            $('.countable1').jqEasyCounter({
+                'maxChars': 9986,
+                'maxCharsWarning': 9980
+            });
+    });
+    
+    
+    </script>
+    
+    
+    <style type="text/css">
+       
+       .labelcss{
+           font-size : 13px;
+           font-weight : bold;
+           font-type : Helvetica;    
+           margin-left : 50px;
+       }
+       
+       .textarea{
+           resize: none;
+       }
+       
+       .countable1{
+           width : 400px;
+           height : 250px;
+       }
+       
+       @media screen and (max-width: 800px) {
+         .countable1{
+             width: 200px;
+             height : 400px;
+         }
+       }
+    
+       table#datatable td {
+            margin: 2px 2px 2px 2px;
+            padding: 2px 2px 2px 2px;
+       }
+
+    </style>
+    
+    <apex:form id="frm">
+    
+        <apex:sectionHeader title="Kudo Edit" subtitle="New Kudo"/>
+            
+            <apex:pageMessages id="msg"/>
+            
+            <apex:pageBlock title="Information" mode="edit" tabStyle="Kudo__c">
+                <apex:pageBlockButtons location="both">
+                    <apex:commandButton action="{!save}" value="Save" reRender="msg"/>
+                    <apex:commandButton action="{!saveAndNew}" value="Save And New"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:pageBlockButtons>
+                
+                <br/>
+                
+                <table id="datatable">
+                    <tr>
+                        <td style="word-break:break-all;white-space:nowrap;">
+                        <span class="labelcss"> 
+                            Presented By : 
+                        </span>
+                        </td>
+                        <td>
+                        <apex:outputText value="{!$User.FirstName} {!$User.LastName}"/> 
+                        </td>
+                        
+                        <td style="word-break:break-all;white-space:nowrap;">
+                        <span class="labelcss"> 
+                            Kudo Receivers : 
+                        </span>
+                        </td>
+                        
+                        <td>
+                            
+                            <div class = "requiredInput">
+                            <div class = "requiredBlock"></div>
+                                <c:RN_MultiselectAutoComplete AvailableOptions="{!lstAvailableOptions}" SelectedOptions="{!lstSelectedOptions}" />
+                            </div>
+                            <br/>
+                            <span style="float:right;font-weight:bold" class="labelcss">(Max 10 Employees)</span>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td style="word-break:break-all;white-space:nowrap;">
+                        <span class="labelcss"> 
+                            Description : 
+                        </span>
+                        </td>
+                        <td>
+                            <div class = "requiredInput">
+                            <div class = "requiredBlock"></div>
+                                <apex:inputTextarea id="newDesc" value="{!description}" styleClass="countable1" style="resize:None;"/> 
+                            </div>    
+                            
+                        </td>
+                    
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                        <span class="labelcss">
+                            Chatter Group :
+                        </span>
+                        </td>
+                        <td>
+                            <apex:selectList value="{!groupName}" size="1">
+                                <apex:selectOptions value="{!groups}"/>
+                            </apex:selectList>
+                        </td>
+                    
+                    <td>
+                        <span class="labelcss">
+                            Type :
+                        </span>
+                    </td>
+                    <td>
+                        <apex:selectRadio value="{!typeOfKudo}">
+                            <apex:selectOptions value="{!types}"/>
+                        </apex:selectRadio>
+                    </td>
+                    </tr>
+                  </table>
+                  
+                  
+            </apex:pageBlock>
+            
+            
+            
+    </apex:form>    
+</apex:page>

@@ -1,0 +1,3 @@
+<apex:page Standardcontroller="Contact" extensions="MySetController" recordSetVar="con">
+    <div style="color:red;font-size:80px;font-weight:bold;"> ALOHA ~~~~~~ </div>
+</apex:page>

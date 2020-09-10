@@ -1,0 +1,4 @@
+<aura:component >
+	<p class="maine">Welcome to learning Lightning !!! All the best</p>
+    <c:HelloworldInsider/>
+</aura:component>

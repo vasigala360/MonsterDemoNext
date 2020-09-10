@@ -1,0 +1,29 @@
+<aura:component controller="FlowPickListGenerator" implements="flexipage:availableForAllPageTypes,lightning:availableForFlowScreens" access="global" >
+	 <aura:attribute Name="wireType" type="String" />
+     <aura:attribute Name="templateName" type="String" />
+    <aura:attribute Name="storeRadioId" type="String"/>
+    <aura:attribute Name="options" type="String[]"/>
+    <aura:attribute Name="selectedValue" type="String" access="global" description="This represents the picklist chosen" default="--None--"/>
+    <aura:attribute Name="selectedRadio" type="String" access="global" description="This represents the radio option selected" default="--None--"/>
+    <div class="c-container">
+        <lightning:layout horizontalAlign="center" >
+            <lightning:layoutItem padding="around-large" >
+                <lightning:input type="radio" aura:id="r0" name="others" label="Wire Type" onchange="{!c.onSelect}"/>   	
+            </lightning:layoutItem> 
+            <lightning:layoutItem padding="around-large" >
+            	<lightning:input type="radio" aura:id="r1" name="others"   label="Template Based" onchange="{!c.onSelect}"/> 
+            </lightning:layoutItem>    
+        </lightning:layout>    
+    </div><p/><p/><p/>
+    <aura:if isTrue="{!v.storeRadioId != null}">
+        <div class="c-container" aura:id="picklistdiv">
+            <lightning:layout horizontalAlign="center" >
+                <ui:inputSelect value="{!v.selectedValue}" label="Options">
+                    <aura:iteration items="{!v.options}" var="opts" indexVar="key">
+                        <ui:inputSelectOption text="{!opts.value}" label="{!opts.key}" value="{!opts.selected}"/>
+                    </aura:iteration>
+                </ui:inputSelect>
+            </lightning:layout>    
+        </div>
+    </aura:if>    
+</aura:component>

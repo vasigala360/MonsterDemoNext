@@ -1,0 +1,41 @@
+<apex:page showHeader="true" sidebar="true" controller="KudoListController" tabStyle="Kudo__c">
+    
+    <apex:form id="displayForm"> 
+    
+        <apex:sectionHeader title="Kudos" subtitle="Home"/>
+            
+        <apex:pageMessages id="msg"/>
+
+        <apex:pageBlock title="Kudos Received">
+            
+            <apex:pageBlockTable value="{!ReceivedKudos}" var="resKudo" rendered="{!renderReceivedTable}">
+                <apex:column value="{!resKudo.Description__c}" width="5000px"/> 
+                <apex:column value="{!resKudo.Kudo_Type__c}" headerValue="Kudo Type"/>
+                <apex:column value="{!resKudo.CreatedBy.Name}" headerValue="Presented By"/> 
+            </apex:pageBlockTable>
+
+            <apex:outputText value="Sorry you didnt Receive any Kudos still !!" rendered="{!renderNoRecievedMsg}"/>
+
+        </apex:pageBlock>
+        
+        <p/><br/>
+        
+        <apex:pageBlock title="Kudos Presented">
+            
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Create a Kudo" action="{!redirectToCreatePage}"/>
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockTable value="{!PresentedKudos}" var="presKudo" rendered="{!renderPresentedTable}">
+                <apex:column value="{!presKudo.Description__c}" width="5000px"/> 
+                <apex:column value="{!presKudo.Kudo_Type__c}" headerValue="Kudo Type"/>
+                <apex:column value="{!presKudo.Presented_To__r.Name}" headerValue="Presented To"/>  
+            </apex:pageBlockTable>
+
+            <apex:outputText value="Sorry you didnt Present any Kudos to anyone still . Present One Now !!" rendered="{!renderNoPresentedMsg}"/>
+
+        </apex:pageBlock> 
+
+    </apex:form>
+
+</apex:page>

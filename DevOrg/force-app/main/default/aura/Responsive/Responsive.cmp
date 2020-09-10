@@ -1,0 +1,54 @@
+<aura:component>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col divInner slds-p-top_medium slds-size_4-of-12">
+            <span>1</span>
+        </div>
+        <div class="slds-col divInner slds-p-top_medium slds-size_6-of-12">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-3">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-id-1">First Name</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" id="text-input-id-1" placeholder="Placeholder Text" class="slds-input" />
+                        </div>
+                    </div>        
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-id-1">Last Name</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" id="text-input-id-1" placeholder="Placeholder Text" class="slds-input" />
+                        </div>
+                    </div>        
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-id-1">Middle Name</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" id="text-input-id-1" placeholder="Placeholder Text" class="slds-input" />
+                        </div>
+                    </div>        
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-id-1">Email Id</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" id="text-input-id-1" placeholder="Placeholder Text" class="slds-input" />
+                        </div>
+                    </div>        
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-id-1">Phone Number</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" id="text-input-id-1" placeholder="Placeholder Text" class="slds-input" />
+                        </div>
+                    </div>        
+                </div>
+            </div>
+        </div>
+        <div class="slds-col divInner slds-p-top_medium slds-size_2-of-12">
+            <span>3</span>
+        </div>
+    </div>
+</aura:component>
