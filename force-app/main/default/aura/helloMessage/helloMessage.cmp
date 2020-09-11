@@ -1,4 +1,0 @@
-<aura:component >
-    <aura:attribute name="message" type="string" default="jeff"/>
-    {!'Chota Component'+v.message}
-</aura:component>

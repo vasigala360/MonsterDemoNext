@@ -1,7 +1,0 @@
-<aura:documentation>
-	<aura:description> <code>c:campingHeader</code> 
-        component can be used to display camping header</aura:description>
-	<aura:example name="campingHeader" ref="c:campingHeader" label="Label">
-		Example Description
-	</aura:example>
-</aura:documentation>

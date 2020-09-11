@@ -1,3 +1,0 @@
-<apex:page >
-    <apex:outputText value="{!$User.FirstName}"/>
-</apex:page>

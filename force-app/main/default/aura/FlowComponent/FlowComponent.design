@@ -1,4 +1,0 @@
-<design:component>
-	<design:attribute name="selectedValue" label="Output Variable" />
-    <design:attribute name="selectedRadio" label="Output Variable" />
-</design:component>

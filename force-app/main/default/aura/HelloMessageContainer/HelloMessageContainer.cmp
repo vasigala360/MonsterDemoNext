@@ -1,4 +1,0 @@
-<aura:component >
-    <aura:attribute name="messageText" type="string"/>
-    <c:HelloMessageDisplayer message="{!v.messageText}"/>
-</aura:component>

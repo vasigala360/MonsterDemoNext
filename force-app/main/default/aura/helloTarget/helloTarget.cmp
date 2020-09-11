@@ -1,4 +1,0 @@
-<aura:component >
-    <aura:handler event="c:navSelected" action="{!c.onMenuItemSelected}"/>
-    <div aura:id="displayPort"></div>
-</aura:component>

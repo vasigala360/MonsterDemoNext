@@ -1,7 +1,0 @@
-<apex:page controller="leadctrl">
-     <apex:form >
-     <apex:inputField value="{!ld.LastName}"/>
-     <apex:inputField value="{!ld.SampleTime__c}"/>
-     <apex:commandButton value="Save" action="{!save}"/>
-     </apex:form>
-</apex:page>

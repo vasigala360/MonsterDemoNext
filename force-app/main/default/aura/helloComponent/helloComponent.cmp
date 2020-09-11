@@ -1,7 +1,0 @@
-<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
- <lightning:navigation aura:id="navService"/>
- <lightning:button label="Navigate" onclick="{!c.handleClick}"/>
- <aura:registerEvent name="appEvent" type="c:navSelected"/>
-
- <li><a href="#" onclick="{!c.performActivitySelected}">Activity</a></li>
-</aura:component>
